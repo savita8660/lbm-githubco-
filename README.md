@@ -5,8 +5,6 @@
 A professional Django REST Framework-based Library Management System with a beautiful, responsive web interface for managing books.
 
 
-<img width="287" height="176" alt="imagess" src="https://github.com/user-attachments/assets/0b62c144-6785-4630-a944-99a3591a7e7f" />
----
 
 ## 🌐 What is an API?
 <img width="268" height="188" alt="download (1)" src="https://github.com/user-attachments/assets/ecd582e3-e653-49c3-8bf7-3114598a839a" />
