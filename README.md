@@ -1,4 +1,6 @@
+
 # 📚 Library Management System - Full Stack Implementation
+<img width="1254" height="635" alt="Screenshot 2026-05-18 104240" src="https://github.com/user-attachments/assets/a9593572-4df0-4e3e-87f1-0ac74a42982d" />
 
 A professional Django REST Framework-based Library Management System with a beautiful, responsive web interface for managing books.
 
