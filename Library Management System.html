@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:8000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    
+    <link rel="stylesheet" href="./Library Management System_files/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>📚 Library Management System</h1>
+                </div>
+                <nav class="nav-tabs">
+                    <button class="nav-btn active" data-tab="view">View Books</button>
+                    <button class="nav-btn" data-tab="add">Add Book</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Search and Filter Section -->
+        <section class="search-section">
+            <input type="text" id="searchInput" placeholder="Search by title, author, or ISBN..." class="search-box">
+            <select id="categoryFilter" class="filter-select">
+                <option value="">All Categories</option>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-Fiction</option>
+                <option value="science">Science</option>
+                <option value="history">History</option>
+                <option value="biography">Biography</option>
+                <option value="self-help">Self-Help</option>
+                <option value="mystery">Mystery</option>
+                <option value="romance">Romance</option>
+            </select>
+            <button id="availableBtn" class="filter-btn">Available Books Only</button>
+            <button id="resetBtn" class="reset-btn">Reset</button>
+        </section>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- View Books Tab -->
+            <div id="view-tab" class="tab-content active">
+                <div class="books-container" id="booksContainer">
+            <div class="book-card">
+                <div class="book-card-header">
+                    <span class="book-category">History</span>
+                </div>
+                <h3 class="book-title">The Adventures of Tom Sawyer</h3>
+                <p class="book-author">by Mark Twain</p>
+                <p class="book-isbn">ISBN: 2134564657342</p>
+                <div class="book-price">$234.00</div>
+                <div class="book-availability">
+                    <span class="availability-badge available">
+                        576 Available
+                    </span>
+                </div>
+                <div class="book-actions">
+                    <button class="btn-small btn-view" onclick="app.viewBook(3)">View</button>
+                    <button class="btn-small btn-edit" onclick="app.editBook(3)">Edit</button>
+                    <button class="btn-small btn-delete" onclick="app.deleteBook(3)">Delete</button>
+                </div>
+            </div>
+        
+            <div class="book-card">
+                <div class="book-card-header">
+                    <span class="book-category">Fiction</span>
+                </div>
+                <h3 class="book-title">To Kill a Mockingbird</h3>
+                <p class="book-author">by Harper Lee</p>
+                <p class="book-isbn">ISBN: 9780061120084</p>
+                <div class="book-price">$18.99</div>
+                <div class="book-availability">
+                    <span class="availability-badge available">
+                        3 Available
+                    </span>
+                </div>
+                <div class="book-actions">
+                    <button class="btn-small btn-view" onclick="app.viewBook(2)">View</button>
+                    <button class="btn-small btn-edit" onclick="app.editBook(2)">Edit</button>
+                    <button class="btn-small btn-delete" onclick="app.deleteBook(2)">Delete</button>
+                </div>
+            </div>
+        
+            <div class="book-card">
+                <div class="book-card-header">
+                    <span class="book-category">Fiction</span>
+                </div>
+                <h3 class="book-title">The Great Gatsby</h3>
+                <p class="book-author">by F. Scott Fitzgerald</p>
+                <p class="book-isbn">ISBN: 9780743273565</p>
+                <div class="book-price">$15.99</div>
+                <div class="book-availability">
+                    <span class="availability-badge available">
+                        5 Available
+                    </span>
+                </div>
+                <div class="book-actions">
+                    <button class="btn-small btn-view" onclick="app.viewBook(1)">View</button>
+                    <button class="btn-small btn-edit" onclick="app.editBook(1)">Edit</button>
+                    <button class="btn-small btn-delete" onclick="app.deleteBook(1)">Delete</button>
+                </div>
+            </div>
+        </div>
+            </div>
+
+            <!-- Add Book Tab -->
+            <div id="add-tab" class="tab-content">
+                <div class="form-container">
+                    <h2>Add New Book</h2>
+                    <form id="addBookForm" class="book-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="title">Title *</label>
+                                <input type="text" id="title" name="title" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="author">Author *</label>
+                                <input type="text" id="author" name="author" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="isbn">ISBN (13 digits) *</label>
+                                <input type="text" id="isbn" name="isbn" maxlength="13" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="category">Category *</label>
+                                <select id="category" name="category" required="">
+                                    <option value="fiction">Fiction</option>
+                                    <option value="non-fiction">Non-Fiction</option>
+                                    <option value="science">Science</option>
+                                    <option value="history">History</option>
+                                    <option value="biography">Biography</option>
+                                    <option value="self-help">Self-Help</option>
+                                    <option value="mystery">Mystery</option>
+                                    <option value="romance">Romance</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="published_date">Published Date *</label>
+                                <input type="date" id="published_date" name="published_date" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="pages">Pages *</label>
+                                <input type="number" id="pages" name="pages" min="1" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="price">Price ($) *</label>
+                                <input type="number" id="price" name="price" step="0.01" min="0" required="">
+                            </div>
+                            <div class="form-group">
+                                <label for="available_copies">Available Copies *</label>
+                                <input type="number" id="available_copies" name="available_copies" min="0" required="">
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="description">Description</label>
+                            <textarea id="description" name="description" rows="5"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Add Book</button>
+                        <button type="reset" class="btn-secondary">Clear</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Loading Indicator -->
+        <div id="loadingSpinner" class="spinner hidden"></div>
+
+        <!-- Notification -->
+        <div id="notification" class="notification success hidden">Books loaded successfully</div>
+
+        <!-- Modal for Edit/View Details -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="modal-close">×</span>
+                <h2 id="modalTitle">Book Details</h2>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Library Management System_files/api.js.download"></script>
+    <script src="./Library Management System_files/app.js.download"></script>
+
+
+</body></html>
